@@ -1,6 +1,6 @@
 # js-bg-jobs
 
-Using background jobs (tasks) with Node.js
+Using background jobs (tasks) with Node.js and Redis
 
 Libs:
 - express
@@ -8,3 +8,6 @@ Libs:
 - sucrase
 - body-parser
 - nodemailer
+- bull
+- bull-board
+- sentry
