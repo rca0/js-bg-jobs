@@ -1,2 +1,10 @@
 # js-bg-jobs
-js playground
+
+Using background jobs (tasks) with Node.js
+
+Libs:
+- express
+- nodemon
+- sucrase
+- body-parser
+- nodemailer
