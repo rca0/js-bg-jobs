@@ -1,4 +1,4 @@
-import Mail from '../lib/Mail';
+import Queue from '../lib/Queue';
 
 export default {
     async store(req, res) {
@@ -9,14 +9,10 @@ export default {
             email,
             password,
         };
-        
-        await Mail.sendMail({
-            from: 'Queue ruanc.dev <queue@ruanc.dev>',
-            to: `${name} <${email}>`,
-            subject: 'Register user',
-            html: `Hi, ${name}, welcome to queue ruanc.dev system.`
-        });
 
-        return res.json(user);
+        await Queue.add('RegistrationMail', { user });
+        await Queue.add('UserReport', { user });
+
+        return res.json(user); 
     }
 };
